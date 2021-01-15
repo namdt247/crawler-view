@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CrawlerView.Models.Article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Danh sách tin tức dinh dưỡng</h2>
+
+
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+    <div class="col-lg-4">
+        <div>
+            @Html.DisplayFor(modelItem => item.Title)
+        </div>
+        <div>
+            <img src="@Html.DisplayFor(modelItem => item.Image)" alt="img" width="300" />
+        </div>
+        <div>
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.Id })
+        </div>
+    </div>
+     }
+        
+</div>

@@ -1,0 +1,25 @@
+﻿@model CrawlerView.Models.Article
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Thông tin bài viết</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Title)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="text-center">
+            <img src="@Html.DisplayFor(model => model.Image)" alt="Alternate Text" width="500"/>
+        </div>
+
+        <div>
+            @Html.DisplayFor(model => model.Description)
+        </div>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Danh sách tin", "Index")
+</p>
